@@ -12,6 +12,7 @@ class HackerRankTest {
     @Test
     void cookie_01() {
 	Assertions.assertEquals(2, HackerRank.cookies(7, List.of(1, 2, 3, 9, 10, 12)));
+	Assertions.assertEquals(4, HackerRank.cookies(9, List.of(2, 7, 3, 6, 4, 6)));
     }
 
 }
