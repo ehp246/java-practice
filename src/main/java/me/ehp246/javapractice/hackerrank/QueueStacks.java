@@ -1,4 +1,4 @@
-package me.ehp246.javapractice;
+package me.ehp246.javapractice.hackerrank;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
