@@ -1,6 +1,7 @@
 package me.ehp246.javapractice.hackerrank;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class HackerRank {
@@ -39,5 +40,25 @@ public class HackerRank {
 	}
 
 	return count;
+    }
+
+    public static int pairs(int k, List<Integer> arr) {
+	// final var list = new ArrayList<>(arr);
+	// list.sort(Integer::compareTo);
+	final var map = new HashSet<Integer>(arr.size());
+
+	arr.stream().forEach(map::add);
+
+	var count = 0;
+	for (var one : map) {
+	    if (map.contains(one + k)) {
+		count++;
+	    }
+	    if (map.contains(one - k)) {
+		count++;
+	    }
+	}
+
+	return count / 2;
     }
 }

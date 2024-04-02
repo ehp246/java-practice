@@ -15,4 +15,8 @@ class HackerRankTest {
 	Assertions.assertEquals(4, HackerRank.cookies(9, List.of(2, 7, 3, 6, 4, 6)));
     }
 
+    @Test
+    void paris() {
+	Assertions.assertEquals(3, HackerRank.pairs(2, List.of(1, 5, 3, 4, 2)));
+    }
 }
