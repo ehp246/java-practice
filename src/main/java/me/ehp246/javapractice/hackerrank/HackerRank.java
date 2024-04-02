@@ -1,8 +1,9 @@
 package me.ehp246.javapractice.hackerrank;
 
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class HackerRank {
     public static int cookies(int k, List<Integer> A) {
@@ -43,18 +44,16 @@ public class HackerRank {
     }
 
     public static int pairs(int k, List<Integer> arr) {
-	// final var list = new ArrayList<>(arr);
-	// list.sort(Integer::compareTo);
-	final var map = new HashSet<Integer>(arr.size());
+	final var set = Collections.newSetFromMap(new ConcurrentHashMap<Integer, Boolean>());
 
-	arr.stream().forEach(map::add);
+	arr.parallelStream().forEach(set::add);
 
 	var count = 0;
-	for (var one : map) {
-	    if (map.contains(one + k)) {
+	for (var one : set) {
+	    if (set.contains(one + k)) {
 		count++;
 	    }
-	    if (map.contains(one - k)) {
+	    if (set.contains(one - k)) {
 		count++;
 	    }
 	}
